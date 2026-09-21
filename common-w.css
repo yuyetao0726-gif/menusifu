@@ -1,0 +1,344 @@
+    /* ============================================================
+       全站共用样式：Reset / 字号变量 / 顶部导航 / 页面头图 / 页脚
+       Home-W.html、Gallery-W.html、Contact-Us.html 统一调用
+       ============================================================ */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 网站底层背景色 */
+    body {
+        background-color: #E8E7DB;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    /* ============================================================
+       三端文字大小统一设置（改这里即可全站生效）
+       电脑端：> 1440px   |   iPad 端：<= 1440px   |   手机端：<= 768px
+       ------------------------------------------------------------
+       --font-nav      导航菜单链接
+       --font-title    各板块大标题
+       --font-text     正文文字
+       --font-hero-h1  页面头图主标题
+       --font-hero-h2  页面头图副标题
+       --font-button   按钮文字
+       ============================================================ */
+    :root {
+        --font-nav: 36px;
+        --font-title: 54px;
+        --font-text: 36px;
+        --font-hero-h1: 120px;
+        --font-hero-h2: 54px;
+        --font-button: 36px;
+    }
+
+    /* iPad 端 */
+    @media (max-width: 1440px) {
+        :root {
+            --font-nav: 28px;
+            --font-title: 54px;
+            --font-text: 36px;
+            --font-hero-h1: 96px;
+            --font-hero-h2: 72px;
+            --font-button: 30px;
+        }
+    }
+
+    /* 手机端 */
+    @media (max-width: 768px) {
+        :root {
+            --font-nav: 24px;
+            --font-title: 36px;
+            --font-text: 24px;
+            --font-hero-h1: 96px;
+            --font-hero-h2: 72px;
+            --font-button: 30px;
+        }
+    }
+
+    /* ============================ 顶部导航 ============================ */
+    .head-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1F3F1D;
+        max-height: 120px;
+        padding: 10px 40px 10px 40px;
+    }
+
+    .head-top img {
+        display: block;
+        width: auto;
+        max-height: 110px;
+    }
+
+    /* 桌面端不显示汉堡按钮 */
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 40px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .menu1 {
+        flex: 1;
+        margin-left: 20px;
+    }
+
+    .menu1 ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 40px;
+        list-style: none;
+    }
+
+    .menu1 ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+        list-style: none;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 24px;
+    }
+
+    .menu1 ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: var(--font-nav);
+        white-space: nowrap;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .menu1 ul li a:hover {
+        color: #fff;
+    }
+
+    /* 当前所在页面高亮 */
+    .menu1 ul li a.active {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 8px;
+    }
+
+    /* ============================ 页面头图 ============================ */
+    .page-main {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 220px 0;
+        line-height: 120px;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(./9.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .page-main h1 {
+        color: #1F3F1D;
+        font-size: var(--font-hero-h1);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .page-main h2 {
+        color: #1F3F1D;
+        font-size: var(--font-hero-h2);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+    }
+
+    /* ============================ 通用按钮 ============================ */
+    .button button {
+        background-color: #1F3F1D;
+        color: #fff;
+        border: none;
+        padding: 15px 40px;
+        font-size: var(--font-button);
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .button button:hover {
+        background-color: #DB261D;
+    }
+
+    /* ============================ 页脚 Contact Us ============================ */
+    .bottom {
+        display: block;
+        margin: 40px auto 40px;
+        padding: 0 20px 20px 20px;
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    .bottom h3 {
+        padding: 50px 0 50px 0;
+        text-align: center;
+        font-size: 72px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #1F3F1D;
+    }
+
+    .bottom > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .bottom .info {
+        flex: none;
+        width: 100%;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .bottom .info h4 {
+        font-size: 54px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #1F3F1D;
+        text-decoration: none;
+    }
+
+    .bottom .info p,
+    .bottom .info a {
+        font-size: 36px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #1F3F1D;
+        text-decoration: none;
+    }
+
+    .bottom .info a:hover {
+        text-decoration: underline;
+    }
+
+    .bottom > div > img {
+        flex: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    /* ============================ iPad / 平板端 ============================ */
+    @media (max-width: 1440px) {
+        .head-top {
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            max-height: none;
+            padding: 16px 24px;
+        }
+
+        .head-top img {
+            max-height: 90px;
+        }
+
+        .menu1 {
+            flex: none;
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .menu1 ul {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .menu1 ul li {
+            justify-content: center;
+        }
+
+        .bottom > div {
+            flex-direction: column;
+        }
+
+        .bottom > div > img {
+            max-width: 100%;
+        }
+    }
+
+    /* ============================ 手机端 ============================ */
+    @media (max-width: 768px) {
+        .head-top {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        }
+
+        .head-top img {
+            max-height: 70px;
+        }
+
+        .nav-toggle {
+            display: block;
+        }
+
+        .menu1 {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #1F3F1D;
+            padding: 12px 0 20px;
+            z-index: 999;
+        }
+
+        .menu1.show {
+            display: block;
+        }
+
+        .menu1 ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .menu1 ul li {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .menu1 ul li a {
+            display: block;
+            width: 100%;
+            padding: 14px 0;
+            text-align: center;
+        }
+
+        .page-main {
+            padding: 120px 0;
+            line-height: 80px;
+        }
+
+        .bottom {
+            width: 90%;
+        }
+
+        .bottom h3 {
+            padding: 40px 0 30px 0;
+        }
+
+        .bottom .info h4 {
+            font-size: 30px;
+        }
+
+        .bottom .info p,
+        .bottom .info a {
+            font-size: 24px;
+        }
+    }

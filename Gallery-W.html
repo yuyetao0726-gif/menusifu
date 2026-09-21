@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - MenuSifu</title>
+    <meta name="description" content="Browse photos of fresh sushi, sashimi and traditional rolls served daily at MenuSifu, a Japanese sushi restaurant in New York (349 5th Ave, NY 10016).">
+    <meta name="keywords" content="sushi gallery, MenuSifu photos, Japanese sushi New York, sashimi pictures, sushi rolls">
+    <meta name="author" content="MenuSifu">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.menusifu.com/Gallery-W.html">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gallery - MenuSifu">
+    <meta property="og:description" content="Photos of fresh sushi, sashimi and traditional rolls at MenuSifu in New York.">
+    <meta property="og:url" content="https://www.menusifu.com/Gallery-W.html">
+    <meta property="og:image" content="https://www.menusifu.com/images/1.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery - MenuSifu">
+    <meta name="twitter:description" content="Photos of fresh sushi, sashimi and traditional rolls at MenuSifu in New York.">
+    <meta name="twitter:image" content="https://www.menusifu.com/images/1.jpg">
+    <link rel="stylesheet" href="./common-w.css">
+    <link rel="stylesheet" href="./gallery-w.css">
+</head>
+
+<body>
+    <div class="head-top">
+        <img class="logo" src="./images/11.png" alt="MenuSifu Logo">
+        <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false"
+            aria-controls="nav-menu">☰</button>
+        <nav class="menu1" id="nav-menu">
+            <ul>
+                <li>
+                    <a href="./index.html">Home</a>
+                    <a class="active" href="./Gallery-W.html">Gallery</a>
+                    <a href="./index.html#online-order">Online Order</a>
+                    <a href="./Contact-Us.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div>
+        <div class="page-main">
+            <div>
+                <h1>Gallery</h1>
+                <h2>A Visual Taste of MenuSifu</h2>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="gallery-bar">
+            <h2>Our Sushi, Our Craft</h2>
+            <p>Every dish at MenuSifu is made to order with fresh, high-quality ingredients and traditional Japanese
+                techniques. Browse our gallery and take a look at the sushi, sashimi and traditional rolls served daily
+                at our New York restaurant.</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="gallery-grid">
+            <figure class="zoom">
+                <img src="./images/1.jpg" alt="Assorted sushi platter">
+                <figcaption>Assorted Sushi Platter</figcaption>
+            </figure>
+            <figure class="zoom">
+                <img src="./images/2.jpg" alt="Fresh sashimi selection">
+                <figcaption>Fresh Sashimi</figcaption>
+            </figure>
+            <figure class="zoom">
+                <img src="./images/3.jpg" alt="Traditional sushi rolls">
+                <figcaption>Traditional Rolls</figcaption>
+            </figure>
+            <figure class="zoom">
+                <img src="./images/4.jpg" alt="Chef's signature roll">
+                <figcaption>Signature Roll</figcaption>
+            </figure>
+            <figure class="zoom">
+                <img src="./images/5.jpg" alt="Hand pressed nigiri sushi">
+                <figcaption>Hand Pressed Nigiri</figcaption>
+            </figure>
+            <figure class="zoom">
+                <img src="./images/6.jpg" alt="Sushi combo set">
+                <figcaption>Sushi Combo Set</figcaption>
+            </figure>
+            <figure class="zoom">
+                <img src="./images/7.jpg" alt="Seasonal sashimi boat">
+                <figcaption>Seasonal Sashimi Boat</figcaption>
+            </figure>
+            <figure class="zoom">
+                <img src="./images/8.jpg" alt="Cozy dining space">
+                <figcaption>Cozy Dining Space</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!-- 点击图片后的放大预览 -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="图片预览">
+        <button class="lb-close" type="button" aria-label="关闭预览">✕</button>
+        <button class="lb-prev" type="button" aria-label="上一张">‹</button>
+        <img id="lightbox-img" src="" alt="">
+        <button class="lb-next" type="button" aria-label="下一张">›</button>
+    </div>
+
+    <div>
+        <div class="bottom">
+            <h3>Contact Us</h3>
+            <div>
+                <div class="info">
+                    <h4>Address: </h4>
+                    <a href="https://maps.app.goo.gl/Rkd4TAYPFfFcc42U8">349 5th Ave Fl 3, New York, NY 10016, United
+                        States</a>
+                    <h4>Phone: </h4>
+                    <a href="tel:+12129665888">+1 (212) 966-5888</a>
+                    <h4>Hour: </h4>
+                    <p>Mon - Fri: 11 AM - 10 PM</p>
+                    <p>Sat - Sun: 11 AM - 11 PM</p>
+                </div>
+                <img src="./images/map.png" alt="MenuSifu location map">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector('.nav-toggle');
+            var menu = document.getElementById('nav-menu');
+
+            function setMenu(open) {
+                menu.classList.toggle('show', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单');
+                toggle.textContent = open ? '✕' : '☰';
+            }
+
+            toggle.addEventListener('click', function () {
+                setMenu(!menu.classList.contains('show'));
+            });
+
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    setMenu(false);
+                });
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) setMenu(false);
+            });
+        })();
+
+        /* ================= 图片灯箱 ================= */
+        (function () {
+            var figures = Array.prototype.slice.call(document.querySelectorAll('.gallery-grid .zoom'));
+            var box = document.getElementById('lightbox');
+            var boxImg = document.getElementById('lightbox-img');
+            var current = 0;
+
+            function show(index) {
+                current = (index + figures.length) % figures.length;
+                var img = figures[current].querySelector('img');
+                boxImg.src = img.src;
+                boxImg.alt = img.alt;
+                box.classList.add('show');
+            }
+
+            figures.forEach(function (fig, i) {
+                fig.addEventListener('click', function () {
+                    show(i);
+                });
+            });
+
+            document.querySelector('.lb-close').addEventListener('click', function () {
+                box.classList.remove('show');
+            });
+            document.querySelector('.lb-prev').addEventListener('click', function (e) {
+                e.stopPropagation();
+                show(current - 1);
+            });
+            document.querySelector('.lb-next').addEventListener('click', function (e) {
+                e.stopPropagation();
+                show(current + 1);
+            });
+
+            box.addEventListener('click', function (e) {
+                if (e.target === box) box.classList.remove('show');
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (!box.classList.contains('show')) return;
+                if (e.key === 'Escape') box.classList.remove('show');
+                if (e.key === 'ArrowLeft') show(current - 1);
+                if (e.key === 'ArrowRight') show(current + 1);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

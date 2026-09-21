@@ -1,0 +1,743 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 网站底层背景色 */
+    body {
+        background-color: #E8E7DB;
+    }
+
+    /* ============================================================
+       三端文字大小统一设置（改这里即可全站生效）
+       电脑端：> 1440px   |   iPad 端：<= 1440px   |   手机端：<= 768px
+       ------------------------------------------------------------
+       --font-nav      导航菜单链接
+       --font-title    各板块大标题（About/Gallery/Choose/Review/Contact）
+       --font-text     正文文字（About/Choose/Review/Contact 信息）
+       --font-hero-h1  首屏主标题
+       --font-hero-h2  首屏副标题
+       --font-button   按钮文字
+       ============================================================ */
+    :root {
+        --font-nav: 36px;
+        --font-title: 54px;
+        --font-text: 36px;
+        --font-hero-h1: 120px;
+        --font-hero-h2: 54px;
+        --font-button: 36px;
+    }
+
+    /* iPad 端 */
+    @media (max-width: 1440px) {
+        :root {
+            --font-nav: 28px;
+            --font-title: 54px;
+            --font-text: 36px;
+            --font-hero-h1: 96px;
+            --font-hero-h2: 72px;
+            --font-button: 30px;
+        }
+    }
+
+    /* 手机端 */
+    @media (max-width: 768px) {
+        :root {
+            --font-nav: 24px;
+            --font-title: 36px;
+            --font-text: 24px;
+            --font-hero-h1: 96px;
+            --font-hero-h2: 72px;
+            --font-button: 30px;
+        }
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        background-color: rgb(0, 0, 0);
+    }
+
+    .head-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1F3F1D;
+        max-height: 120px;
+        padding: 10px 40px 10px 40px;
+    }
+
+    .head-top img {
+        display: block;
+        width: auto;
+        max-height: 110px;
+    }
+
+    /* 桌面端不显示汉堡按钮 */
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 40px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .menu1 {
+        flex: 1;
+        margin-left: 20px;
+    }
+
+    .menu1 ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 40px;
+        list-style: none;
+    }
+
+    .menu1 ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+        list-style: none;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 24px;
+    }
+
+    .menu1 ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: var(--font-nav);
+        white-space: nowrap;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .main {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 400px 0;
+        line-height: 120px;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(./9.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .main h1 {
+        color: #1F3F1D;
+        font-size: var(--font-hero-h1);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .main h2 {
+        color: #1F3F1D;
+        font-size: var(--font-hero-h2);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+    }
+    .info h4 {
+        color: #1F3F1D;
+        font-size: var(--font-text);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+    }
+    .info p {
+        color: #1F3F1D;
+        font-size: var(--font-text);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+    }
+
+    .button button {
+        background-color: #1F3F1D;
+        color: #fff;
+        border: none;
+        padding: 15px 40px;
+        font-size: var(--font-button);
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .main {
+        display: block;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 150px 0;
+    }
+
+    .about {
+        display: block;
+        margin: 40px auto 0;   /* 与上方 Hero 板块保持 40px 间距 */
+        background-color: #1F3F1D;
+        padding: 20px 0;
+        width: 80%;
+        border-radius: 25px;
+    }
+    .about h2 {
+        color: #ffffff;
+        font-size: var(--font-title);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        text-align: center;
+    }
+    .about1 p {
+        width: 80%;
+        margin: 0 auto;
+        color: #ffffff;
+        font-size: var(--font-text);
+        line-height: 50px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    h2 {
+        color: #000000;
+        font-size: var(--font-title);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    .about1 {
+        display: flex;
+        justify-content: center;
+        margin: 50px auto;
+    }
+
+    .gallery {
+        display: block;
+        margin: 40px auto 0;
+        background-color: transparent;   /* 透出底层米色背景 */
+        width: 80%;
+        overflow: hidden;
+        padding: 20px 20px;
+    }
+    .gallery img{
+        border-radius: 20px;
+    }
+
+    .gallery1 {
+        display: flex;
+        gap: 10px;
+        align-items: stretch;
+        padding: 0;
+        margin: 40px auto 0;   /* 与上方内容保持 40px 间距 */
+        width: 100%;
+        background-color: transparent;   /* 透出底层米色背景 */
+        box-sizing: border-box;
+    }
+
+    .gallery11 {
+        flex: 0 0 66%;
+        width: auto;
+        margin-right: 0;
+    }
+    .gallery11 img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .gallery12 {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .gallery12 img{
+        display: block;
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+        object-fit: cover;
+    }
+    .gallery2{
+        display: flex;
+        gap: 10px;
+        align-items: stretch;
+        margin: 10px auto 0;
+        width: 100%;
+        background-color: transparent;   /* 透出底层米色背景 */
+        box-sizing: border-box;
+    }
+    .gallery2 img{
+        display: block;
+        flex: 1;
+        min-width: 0;
+        aspect-ratio: 4 / 3;   /* 统一下排三张图高度，底边对齐 */
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    /* 下排前两张合计 = 上排左图宽度（66%），第三张 = 上排右列宽度 */
+    .gallery2 img:nth-child(1),
+    .gallery2 img:nth-child(2) {
+        flex: 0 0 calc((66% - 10px) / 2);
+    }
+    .gallery2 img:nth-child(3) {
+        flex: 1;
+    }
+
+    .choose{
+        display: flex;
+        margin: 0 auto;
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        text-align: center;
+        gap: 50px;
+        width: 80%;             /* 与 Gallery 图片板块同宽 */
+        background-color: rgb(255, 255, 255);
+    }
+    /* 内层 .choose 嵌套在外层内，取消二次缩窄，保证与图片区对齐 */
+    .choose .choose{
+        width: 100%;
+    }
+    .choose h3{
+        text-align: center;
+        font-size: var(--font-title);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #000000;
+    }
+    .choose p{
+        font-size: var(--font-text);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #000000;
+    }
+    .chooseitem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 200px;
+    }
+    .review{
+        display: block;
+        margin: 40px auto 0;   /* 与上方 Choose 板块保持 40px 间距 */
+        background-color: #1F3F1D;
+        padding: 0 20px 20px 20px;
+        width: 80%;             /* 与 Gallery 图片板块同宽 */
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    .review1{
+        display: flex;
+        gap: 30px;
+        align-items: stretch;
+    }
+    .review h3{
+        padding: 50px 0 50px 0;
+        text-align: center;
+        font-size: var(--font-title);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #ffffff;
+    }
+    .review-item {
+        flex: 1;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #ffffff;      /* 常规：白底 */
+        border: 1px solid #e0e0e0;      /* 白底时保留卡片轮廓 */
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        transition: background-color .3s ease, box-shadow .3s ease;
+    }
+    .review-item:hover{
+        background-color: #1F3F1D;      /* 悬停：黑底 */
+        border-color: #ffffff;
+        box-shadow: 0 0 18px rgba(0, 0, 0, 0.45);
+    }
+    .review p{
+        font-size: var(--font-text);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #1F3F1D;                 /* 常规：黑字 */
+        transition: color .3s ease;
+    }
+    .review-item:hover p{
+        color: #ffffff;                 /* 悬停：白字 */
+    }
+    /* .review p:hover{
+        font-size: 36px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #080808;
+    } */
+
+    /* ============ Contact Us 板块：宽度/字号/配色与上方板块保持一致 ============ */
+    .bottom{
+        display: block;
+        margin: 40px auto 0;      /* 与上方 Google Review 板块保持 40px 间距 */
+        /* 板块通栏占满屏幕宽度，靠左右内边距把内容收回，与上方 80% 板块对齐 */
+        width: 100%;
+        padding: 20px calc(10% + 20px) 40px;
+        box-sizing: border-box;
+        /* 背景图 + 70% 白色半透明遮罩，整块通栏铺满 */
+        background-color: #ffffff;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(./images/9.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .bottom h3{
+        padding: 50px 0 50px 0;
+        text-align: center;
+        font-size: 72px;   /* 与其他板块 h3 一致 */
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #1F3F1D;
+    }
+    .bottom > div{
+        display: flex;
+        flex-direction: column;   /* 信息与地图上下排列 */
+        align-items: center;
+        gap: 30px;
+    }
+    .bottom .info{
+        flex: none;
+        width: 100%;
+        line-height: 1.5;
+        text-align: center;
+    }
+    .bottom .info h4{
+        font-size: 54px;  
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #1F3F1D;
+        text-decoration: none;
+    }
+
+    .bottom .info p,
+    .bottom .info a{
+        font-size: 36px;  
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        color: #1F3F1D;
+        text-decoration: none;
+    }
+    .bottom .info a:hover{
+        text-decoration: underline;
+    }
+    .bottom > div > img{
+        flex: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    /* ============ iPad / 平板端：Logo 与 Menu 分层显示 ============ */
+    @media (max-width: 1440px) {
+        .head-top {
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            max-height: none;
+            padding: 16px 24px;
+        }
+
+        .head-top img {
+            max-height: 90px;
+        }
+
+        .menu1 {
+            flex: none;
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .menu1 ul {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .menu1 ul li {
+            justify-content: center;
+        }
+
+        /* Google Review 平板端单栏显示 */
+        .review1 {
+            flex-direction: column;
+        }
+
+        .review-item {
+            flex: none;
+            width: 100%;
+        }
+
+        /* Contact Us 平板端：信息与地图上下堆叠 */
+        .bottom > div {
+            flex-direction: column;
+        }
+
+        .bottom > div > img {
+            max-width: 100%;
+        }
+    }
+
+    /* ============ 手机端：Menu 收进汉堡按钮 ============ */
+    @media (max-width: 768px) {
+        .head-top {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        }
+
+        .head-top img {
+            max-height: 70px;
+        }
+
+        .nav-toggle {
+            display: block;
+        }
+
+        .menu1 {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #1F3F1D;
+            padding: 12px 0 20px;
+            z-index: 999;
+        }
+
+        .menu1.show {
+            display: block;
+        }
+
+        .menu1 ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .menu1 ul li {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .menu1 ul li a {
+            display: block;
+            width: 100%;
+            padding: 14px 0;
+            text-align: center;
+        }
+
+        /* Gallery 手机端单栏显示 */
+        .gallery {
+            width: 90%;
+            padding: 60px 0;
+        }
+
+        .gallery1 {
+            flex-direction: column;
+            padding: 0;
+            gap: 10px;
+        }
+
+        .gallery11 {
+            flex: none;
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .gallery12 {
+            width: 100%;
+        }
+
+        .gallery12 .gi {
+            flex: none;
+        }
+
+        .gallery12 .gi img {
+            height: auto;   /* 手机端恢复图片原始比例 */
+        }
+
+        .gallery2 {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .gallery2 img,
+        .gallery2 img:nth-child(1),
+        .gallery2 img:nth-child(2),
+        .gallery2 img:nth-child(3) {
+            width: 100%;
+            flex: none;
+            aspect-ratio: auto;   /* 手机端恢复图片原始比例 */
+        }
+
+        /* Choose / Review 跟随 Gallery 的宽度；Contact 仍为通栏背景，靠内边距收内容 */
+        .choose,
+        .review {
+            width: 90%;
+        }
+
+        .bottom {
+            width: 100%;
+            padding: 30px calc(5% + 20px);
+        }
+
+        /* Google Review 手机端单栏显示 */
+        .review1 {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-item {
+            flex: none;
+            width: 100%;
+            padding: 24px;
+        }
+    }
+
+    /* ============================================================
+       Gallery 悬停效果：容器大小不变，容器内部的图片放大
+       说明：只在此追加新规则，上面原有的 Gallery 排版样式一律未改动。
+       .zoom = 尺寸固定的取景框，img 在框内放大、溢出部分被裁掉。
+       ============================================================ */
+    .gallery11 .zoom,
+    .gallery12 .zoom,
+    .gallery2 .zoom {
+        position: relative;
+        overflow: hidden;              /* 框内放大，超出部分裁掉 */
+        border-radius: 20px;
+
+    }
+
+    /* .zoom 接管原来图片占据的位置与尺寸 */
+    .gallery11 .zoom {
+        width: 100%;
+        height: 100%;
+    }
+    .gallery12 .zoom {
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+    }
+    .gallery2 .zoom {
+        flex: 1;
+        min-width: 0;
+        aspect-ratio: 4 / 3;           /* 与上排对齐的高度比例，保持原排版 */
+    }
+    .gallery2 .zoom:nth-child(1),
+    .gallery2 .zoom:nth-child(2) {
+        flex: 0 0 calc((66% - 10px) / 2);
+    }
+    .gallery2 .zoom:nth-child(3) {
+        flex: 1;
+    }
+
+    /* 图片铺满取景框 */
+    .gallery11 .zoom img,
+    .gallery12 .zoom img,
+    .gallery2 .zoom img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        aspect-ratio: auto;
+        object-fit: cover;
+        transform: scale(1);
+        transition: transform .4s ease;
+        will-change: transform;
+    }
+
+    /* 鼠标悬停：框不变，框内图片放大 */
+    .gallery11 .zoom:hover img,
+    .gallery12 .zoom:hover img,
+    .gallery2 .zoom:hover img {
+        transform: scale(1.15);
+    }
+
+    /* 触屏设备没有悬停，关闭效果避免点击后残留 */
+    @media (hover: none) {
+        .gallery11 .zoom img,
+        .gallery12 .zoom img,
+        .gallery2 .zoom img {
+            transition: none;
+        }
+        .gallery11 .zoom:hover img,
+        .gallery12 .zoom:hover img,
+        .gallery2 .zoom:hover img {
+            transform: scale(1);
+        }
+    }
+
+    /* Gallery 手机端：图片单栏，保持原有比例 */
+    @media (max-width: 768px) {
+        .gallery12 .zoom {
+            flex: none;
+        }
+
+        .gallery2 .zoom,
+        .gallery2 .zoom:nth-child(1),
+        .gallery2 .zoom:nth-child(2),
+        .gallery2 .zoom:nth-child(3) {
+            width: 100%;
+            flex: none;
+            aspect-ratio: auto;
+        }
+
+        .gallery11 .zoom img,
+        .gallery12 .zoom img,
+        .gallery2 .zoom img {
+            height: auto;              /* 手机端按图片原始比例显示 */
+        }
+    }
+    #fish {
+            position: fixed;
+            top: 0;left: 0;
+            width: 90px;
+            pointer-events: none;
+            z-index: 999999;
+            will-change: transform;
+        }
+
+    /* ===== 配送小车：从左到右循环行驶 ===== */
+    /* 跑道：给小车一个定位参照，百分比是按它的宽度算的 */
+    .delivery-track {
+        position: relative;
+        overflow: hidden;          /* 车开到屏幕外时不出现横向滚动条 */
+        height: 180px;
+    }
+
+    #car {
+        position: absolute;
+        top: 50%;
+        left: 0;                   /* 起点，后面的动画改的就是这个值 */
+        width: 220px;
+        transform: translateY(-50%);
+        animation: car-drive 9s linear infinite;   /* 循环播放 */
+        will-change: left;
+    }
+
+    /* 用百分比表示行驶进度：0% 出发 → 100% 跑完全程 */
+    @keyframes car-drive {
+        0%   { left: -25%; }      /* 进度 0%：车在左边界外，还没进场 */
+        100% { left: 100%; }      /* 进度 100%：车完全开出右边界，接着回到 0% 重新开始 */
+    }
+
+    @media (max-width: 768px) {
+        .delivery-track { height: 120px; }
+        #car { width: 140px; }
+    }
+        

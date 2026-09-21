@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MenuSifu</title>
+    <meta name="description" content="Contact MenuSifu, a Japanese sushi restaurant at 349 5th Ave, New York, NY 10016. Call +1 (212) 966-5888 or find us on Google Maps. Open daily 11 AM.">
+    <meta name="keywords" content="MenuSifu contact, sushi restaurant New York address, NYC sushi phone, 349 5th Ave restaurant">
+    <meta name="author" content="MenuSifu">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.menusifu.com/Contact-Us.html">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Us - MenuSifu">
+    <meta property="og:description" content="Call MenuSifu at +1 (212) 966-5888 or visit 349 5th Ave, New York. Open daily from 11 AM.">
+    <meta property="og:url" content="https://www.menusifu.com/Contact-Us.html">
+    <meta property="og:image" content="https://www.menusifu.com/images/map.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us - MenuSifu">
+    <meta name="twitter:description" content="Call MenuSifu at +1 (212) 966-5888 or visit 349 5th Ave, New York. Open daily from 11 AM.">
+    <meta name="twitter:image" content="https://www.menusifu.com/images/map.png">
+    <link rel="stylesheet" href="./common-w.css">
+    <link rel="stylesheet" href="./contact-w.css">
+</head>
+
+<body>
+    <div class="head-top">
+        <img class="logo" src="./images/11.png" alt="MenuSifu Logo">
+        <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false"
+            aria-controls="nav-menu">☰</button>
+        <nav class="menu1" id="nav-menu">
+            <ul>
+                <li>
+                    <a href="./index.html">Home</a>
+                    <a href="./Gallery-W.html">Gallery</a>
+                    <a href="./index.html#online-order">Online Order</a>
+                    <a class="active" href="./Contact-Us.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div>
+        <div class="page-main">
+            <div>
+                <h1>Contact Us</h1>
+                <h2>We Would Love to Hear From You</h2>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="contact-bar">
+            <h2>Visit MenuSifu in New York</h2>
+            <p>Whether you have a question about our menu, a private event or simply want to say hello, feel free to
+                give us a call or stop by the restaurant. You can also find us easily on Google Maps.</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="contact-main">
+            <!-- 左侧：门店信息 -->
+            <div class="contact-card">
+                <h3>Restaurant Info</h3>
+                <div class="row">
+                    <h4>Address</h4>
+                    <a href="https://maps.app.goo.gl/Rkd4TAYPFfFcc42U8">349 5th Ave Fl 3, New York, NY 10016, United
+                        States</a>
+                </div>
+                <div class="row">
+                    <h4>Phone</h4>
+                    <a href="tel:+12129665888">+1 (212) 966-5888</a>
+                </div>
+                <div class="row">
+                    <h4>Hour</h4>
+                    <p>Mon - Fri: 11 AM - 10 PM</p>
+                    <p>Sat - Sun: 11 AM - 11 PM</p>
+                </div>
+            </div>
+
+            <!-- 右侧：门店位置地图 -->
+            <div class="contact-card contact-map">
+                <h3>Find Us</h3>
+                <a href="https://maps.app.goo.gl/Rkd4TAYPFfFcc42U8" target="_blank" rel="noopener">
+                    <img src="./images/map.png" alt="MenuSifu location map">
+                </a>
+                <p>Get directions on Google Maps</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector('.nav-toggle');
+            var menu = document.getElementById('nav-menu');
+
+            function setMenu(open) {
+                menu.classList.toggle('show', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单');
+                toggle.textContent = open ? '✕' : '☰';
+            }
+
+            toggle.addEventListener('click', function () {
+                setMenu(!menu.classList.contains('show'));
+            });
+
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    setMenu(false);
+                });
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) setMenu(false);
+            });
+        })();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+    /* ============================================================
+       Gallery 页面专用样式
+       排版要求：电脑端一行 4 张 / iPad 端一行 4 张 / 手机端一行 2 张
+       ============================================================ */
+
+    .gallery-bar {
+        display: block;
+        margin: 40px auto 0;
+        background-color: #1F3F1D;
+        padding: 20px 0;
+        width: 80%;
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    .gallery-bar h2 {
+        color: #ffffff;
+        font-size: var(--font-title);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    .gallery-bar p {
+        width: 80%;
+        margin: 20px auto 0;
+        color: #ffffff;
+        font-size: var(--font-text);
+        line-height: 1.5;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    /* ============ 图片网格：默认（电脑端 > 1440px）一行 4 张 ============ */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        width: 80%;
+        margin: 40px auto 0;
+        box-sizing: border-box;
+    }
+
+    /* 单张图片取景框 */
+    .gallery-grid .zoom {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        aspect-ratio: 4 / 3;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+    }
+
+    .gallery-grid .zoom img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        transition: transform .4s ease;
+        will-change: transform;
+    }
+
+    /* 悬停：框大小不变，框内图片放大 */
+    .gallery-grid .zoom:hover img {
+        transform: scale(1.15);
+    }
+
+    /* 图片底部说明文字 */
+    .gallery-grid figcaption {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 24px;
+        color: #1F3F1D;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    /* ============ 灯箱：点击图片放大预览 ============ */
+    .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .lightbox.show {
+        display: flex;
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 20px;
+        object-fit: contain;
+    }
+
+    .lightbox .lb-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 50px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .lightbox .lb-prev,
+    .lightbox .lb-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(31, 63, 29, 0.8);
+        border: none;
+        color: #fff;
+        font-size: 40px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .lightbox .lb-prev {
+        left: 20px;
+    }
+
+    .lightbox .lb-next {
+        right: 20px;
+    }
+
+    /* ============ iPad / 平板端：保持一行 4 张 ============ */
+    @media (max-width: 1440px) {
+        .gallery-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            width: 90%;
+        }
+
+        .gallery-bar {
+            width: 90%;
+        }
+    }
+
+    /* ============ 手机端：一行 2 张 ============ */
+    @media (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            width: 90%;
+        }
+
+        .gallery-grid figcaption {
+            font-size: 18px;
+        }
+
+        .gallery-bar {
+            width: 90%;
+        }
+
+        /* 触屏无悬停，关闭放大效果避免点击后残留 */
+        .gallery-grid .zoom img {
+            transition: none;
+        }
+
+        .gallery-grid .zoom:hover img {
+            transform: scale(1);
+        }
+
+        .lightbox .lb-prev,
+        .lightbox .lb-next {
+            font-size: 30px;
+            padding: 8px 14px;
+        }
+    }
+
+    /* 触屏设备统一关闭悬停放大 */
+    @media (hover: none) {
+        .gallery-grid .zoom img {
+            transition: none;
+        }
+
+        .gallery-grid .zoom:hover img {
+            transform: scale(1);
+        }
+    }
