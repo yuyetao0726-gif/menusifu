@@ -45,9 +45,9 @@
         :root {
             --font-nav: 24px;
             --font-title: 36px;
-            --font-text: 24px;
+            --font-text: 20px;
             --font-hero-h1: 96px;
-            --font-hero-h2: 72px;
+            --font-hero-h2: 54px;
             --font-button: 30px;
         }
     }
