@@ -10,7 +10,7 @@
     <meta name="author" content="MenuSifu">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#DB261D">
-    <link rel="canonical" href="https://www.menusifu.com/">
+    <link rel="canonical" href="https://sifumenu.huoban.men/">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="./favicon.ico">
@@ -18,18 +18,89 @@
     <meta property="og:site_name" content="MenuSifu">
     <meta property="og:title" content="MenuSifu - Authentic Japanese Sushi Restaurant in New York">
     <meta property="og:description" content="Fresh sushi, sashimi and traditional rolls in New York. Order online or visit us at 349 5th Ave, NY 10016.">
-    <meta property="og:url" content="https://www.menusifu.com/">
-    <meta property="og:image" content="https://www.menusifu.com/images/11.png">
+    <meta property="og:url" content="https://sifumenu.huoban.men/">
+    <meta property="og:image" content="https://sifumenu.huoban.men/images/11.png">
     <meta property="og:image:alt" content="MenuSifu sushi restaurant logo">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MenuSifu - Authentic Japanese Sushi Restaurant in New York">
     <meta name="twitter:description" content="Fresh sushi, sashimi and traditional rolls in New York. Order online or visit us at 349 5th Ave, NY 10016.">
-    <meta name="twitter:image" content="https://www.menusifu.com/images/11.png">
+    <meta name="twitter:image" content="https://sifumenu.huoban.men/images/11.png">
     <link rel="stylesheet" href="./home-w.css">
+
+    <!-- ============ 本地化 / GEO 优化 ============ -->
+    <meta name="geo.region" content="US-NY">
+    <meta name="geo.placename" content="New York">
+    <meta name="geo.position" content="40.7484;-73.9847">
+    <meta name="ICBM" content="40.7484, -73.9847">
+    <meta name="rating" content="5">
+
+    <!-- ============ 结构化数据 JSON-LD（富媒体搜索结果 + GEO/LLM 友好） ============ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "MenuSifu",
+      "url": "https://sifumenu.huoban.men/",
+      "image": "https://sifumenu.huoban.men/images/11.png",
+      "logo": "https://sifumenu.huoban.men/images/11.png",
+      "telephone": "+1 (212) 966-5888",
+      "priceRange": "$$",
+      "servesCuisine": ["Japanese", "Sushi"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "349 5th Ave Fl 3",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10016",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.7484,
+        "longitude": -73.9847
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "11:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "11:00",
+          "closes": "23:00"
+        }
+      ],
+      "acceptsReservations": true
+    }
+    </script>
+
+    <!-- ============ Google Search Console 验证（上线后把 content 换成 GSC 提供的验证码） ============ -->
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE">
+
+    <!-- ============ 分析工具：GTM + GA4（占位符，上线前替换为真实 ID） ============ -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics 4（若已在 GTM 内配置 GA4，请删除本段以免重复统计） -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com">
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="head-top">
         <img class="logo" src="./images/11.png" alt="MenuSifu">
         <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false"
