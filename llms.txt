@@ -1,0 +1,27 @@
+# MenuSifu
+
+> MenuSifu is an authentic Japanese sushi restaurant located at 349 5th Ave Fl 3, New York, NY 10016, serving fresh sushi, sashimi and traditional rolls in a cozy, elegant setting. Open daily from 11 AM; order online or visit us in person.
+
+## Key Information
+- **Restaurant name:** MenuSifu
+- **Address:** 349 5th Ave Fl 3, New York, NY 10016, United States
+- **Phone:** +1 (212) 966-5888
+- **Hours:** Mon–Fri 11:00–22:00, Sat–Sun 11:00–23:00
+- **Cuisine:** Japanese, Sushi
+- **Price range:** $$
+- **Coordinates:** 40.7484, -73.9847
+- **Reservations:** Accepted
+
+## Pages
+- [Home](https://sifumenu.huoban.men/): Introduction, signature dishes (traditional rolls, classic sushi, fresh sashimi) and online ordering.
+- [Gallery](https://sifumenu.huoban.men/Gallery-W.html): Photos of fresh sushi, sashimi and traditional rolls served daily.
+- [Contact Us](https://sifumenu.huoban.men/Contact-Us.html): Address, phone, opening hours and Google Maps location.
+
+## What We Serve
+- Fresh sushi and nigiri prepared with handcraft and rigorous ingredient selection.
+- Traditional Japanese rolls and chef's signature rolls.
+- Fresh sashimi platters.
+- Online ordering available.
+
+## Reputation
+- Rated 5 stars by customers for super-fresh sushi, sashimi and traditional rolls, quick service, and a clean, casual vibe in New York.

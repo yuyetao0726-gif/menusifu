@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://sifumenu.huoban.men/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sifumenu.huoban.men/images/11.png</image:loc>
+      <image:title>MenuSifu Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sifumenu.huoban.men/images/1.jpg</image:loc>
+      <image:title>Fresh sushi platter at MenuSifu</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sifumenu.huoban.men/Gallery-W.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sifumenu.huoban.men/images/1.jpg</image:loc>
+      <image:title>MenuSifu sushi selection</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sifumenu.huoban.men/Contact-Us.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sifumenu.huoban.men/images/map.png</image:loc>
+      <image:title>MenuSifu location map</image:title>
+    </image:image>
+  </url>
+</urlset>

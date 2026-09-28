@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 站点地图（搜索引擎抓取入口）
+Sitemap: https://sifumenu.huoban.men/sitemap.xml
+
+# 首选域名（Bing / Yandex / Baidu 支持的 Host 指令，帮助统一收录权重）
+Host: sifumenu.huoban.men
