@@ -7,11 +7,11 @@
   },
   "_备注_GTM": "容器ID形如 GTM-ABC1234",
   "gtm": {
-    "containerId": ""
+    "containerId": "GTM-5XLP7LML"
   },
   "_备注_GA4": "衡量ID形如 G-ABCDEF123; viaGtm=true 表示 GA4 在 GTM 容器内配置(推荐), 不在页面里重复埋 gtag",
   "ga4": {
     "measurementId": "G-G9B6R00LQ9",
-    "viaGtm": false
+    "viaGtm": true
   }
 }
