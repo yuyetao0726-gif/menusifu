@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MenuSifu · GSC / GA4 / GTM 配置指南</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+       background:#f4f6f9;color:#1f2937;line-height:1.7;padding:28px}
+  .wrap{max-width:940px;margin:0 auto}
+  header{background:linear-gradient(135deg,#DB261D,#b51d15);color:#fff;border-radius:16px;
+         padding:28px 32px;margin-bottom:22px;box-shadow:0 8px 24px rgba(219,38,29,.25)}
+  header h1{font-size:25px;margin-bottom:6px}
+  header p{opacity:.93;font-size:14px}
+  .card{background:#fff;border-radius:14px;padding:24px;margin-bottom:18px;
+        box-shadow:0 2px 10px rgba(0,0,0,.06)}
+  h2{font-size:19px;margin-bottom:12px;color:#111827;display:flex;align-items:center;gap:8px}
+  h3{font-size:15px;margin:16px 0 8px;color:#374151}
+  p,li{font-size:14px}
+  ol,ul{margin-left:20px}
+  li{margin:7px 0}
+  code{background:#f3f4f6;padding:2px 6px;border-radius:5px;font-size:13px;
+       font-family:ui-monospace,Consolas,monospace;color:#b91c1c}
+  pre{background:#0f172a;color:#e2e8f0;border-radius:9px;padding:14px 16px;
+      font-family:ui-monospace,Consolas,monospace;font-size:12.5px;overflow:auto;margin:10px 0;line-height:1.6}
+  .box{background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 8px 8px 0;
+       padding:12px 16px;margin:12px 0;font-size:14px}
+  .warn{background:#fffbeb;border-left:4px solid #f59e0b;border-radius:0 8px 8px 0;
+        padding:12px 16px;margin:12px 0;font-size:14px}
+  .ok{background:#ecfdf5;border-left:4px solid #10b981;border-radius:0 8px 8px 0;
+      padding:12px 16px;margin:12px 0;font-size:14px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+  th,td{border:1px solid #e5e7eb;padding:9px 12px;text-align:left}
+  th{background:#f9fafb;font-weight:600}
+  .st{font-weight:700;padding:2px 9px;border-radius:20px;font-size:12px}
+  .done{background:#def7ec;color:#046c4e}
+  .todo{background:#fde8e8;color:#9b1c1c}
+  a{color:#2563eb}
+  footer{text-align:center;color:#9ca3af;font-size:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>🍣 MenuSifu · 任务4 配置指南</h1>
+  <p>Google Search Console 收录 + GA4 / GTM（加分项）｜ 站点：https://sifumenu.huoban.men</p>
+</header>
+
+<div class="card">
+  <h2>📌 当前进度</h2>
+  <table>
+    <tr><th>项目</th><th>状态</th><th>说明</th></tr>
+    <tr><td>全站代码注入脚本</td><td><span class="st done">已完成</span></td><td><code>apply-analytics.py</code>，一处配置、3 个页面全生效，幂等可重复运行</td></tr>
+    <tr><td>修复错误域名（严重）</td><td><span class="st done">已完成</span></td><td>Gallery / Contact 页的 canonical、og:url、og:image 原本指向 <code>www.menusifu.com</code>，已修正为真实域名（不改会导致 GSC 收录异常）</td></tr>
+    <tr><td>清除无效占位符</td><td><span class="st done">已完成</span></td><td>原 <code>YOUR_GSC_VERIFICATION_CODE</code>、<code>GTM-XXXXXXX</code>、<code>G-XXXXXXXXXX</code> 假值已移除</td></tr>
+    <tr><td>填入 3 个真实 ID</td><td><span class="st todo">需你操作</span></td><td>GSC 验证码 / GA4 衡量 ID / GTM 容器 ID —— 只能从你的 Google 后台获取</td></tr>
+    <tr><td>提交并部署</td><td><span class="st todo">需你操作</span></td><td>push 到 GitHub 后 Cloudflare 自动部署</td></tr>
+  </table>
+  <div class="box">我无法代你登录 Google 账号，所以最后一步「拿 ID + 验证」必须由你完成。下面每一步都精确到点击路径，全程约 10 分钟。</div>
+</div>
+
+<div class="card">
+  <h2>① 先准备好这三个值</h2>
+  <table>
+    <tr><th>名称</th><th>长什么样</th><th>填到 site.config.json</th></tr>
+    <tr><td>GSC 验证码</td><td><code>Eb8x...</code>（一长串字符）</td><td><code>gsc.verificationCode</code></td></tr>
+    <tr><td>GA4 衡量 ID</td><td><code>G-ABCDEF1234</code></td><td><code>ga4.measurementId</code></td></tr>
+    <tr><td>GTM 容器 ID</td><td><code>GTM-ABC1234</code></td><td><code>gtm.containerId</code></td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>② Google Search Console（核心任务）</h2>
+  <ol>
+    <li>打开 <a href="https://search.google.com/search-console">search.google.com/search-console</a>，用 Google 账号登录。</li>
+    <li>点右上角 <b>「添加资源」</b>（Add property）。</li>
+    <li>左侧选 <b>「网址前缀」</b>，输入 <code>https://sifumenu.huoban.men/</code>，点继续。</li>
+    <li>在「验证所有权」里展开 <b>HTML 标记</b>，会看到类似：<br>
+      <code>&lt;meta name="google-site-verification" content="AbC123..."&gt;</code><br>
+      只复制 <b>content 里的那串值</b>（不要复制整行）。</li>
+    <li>把这串值填进 <code>site.config.json</code> 的 <code>gsc.verificationCode</code>。</li>
+    <li>运行脚本并部署（见第 ⑤ 步），然后回到 GSC 点 <b>「验证」</b>。</li>
+  </ol>
+  <div class="warn"><b>验证前务必先部署。</b>如果还没 push，Google 抓到的页面里没有这个 meta，验证必然失败。Cloudflare 自动部署约需 1–2 分钟，失败就等两分钟再点。</div>
+  <h3>验证通过后，再做完这两件事（很重要）</h3>
+  <ul>
+    <li><b>提交站点地图</b>：左侧「站点地图」→ 输入 <code>sitemap.xml</code> → 提交。状态显示「成功」即被读取。</li>
+    <li><b>请求编入索引</b>：顶部「网址检查」→ 粘贴首页 URL → 回车 → 「请求编入索引」，三个页面都做一遍。</li>
+  </ul>
+  <div class="box"><b>可选更强方案（网域资源）</b>：添加资源时选「网域」并填 <code>huoban.men</code>，需在 Cloudflare DNS 加一条 TXT 记录 <code>google-site-verification=...</code>。好处是一次验证覆盖所有子域名。若走这条路，把 <code>gsc.verificationMethod</code> 改成 <code>dns</code>。</div>
+</div>
+
+<div class="card">
+  <h2>③ GA4（加分项）</h2>
+  <ol>
+    <li>打开 <a href="https://analytics.google.com/">analytics.google.com</a> → 左下角齿轮「管理」→「创建」→「媒体资源」。</li>
+    <li>名称填 <code>MenuSifu</code>，国家选 United States，币种 USD，下一步后选「网站」。</li>
+    <li>数据流：网站网址填 <code>https://sifumenu.huoban.men</code>，名称 <code>MenuSifu Web</code>。</li>
+    <li>创建后会显示<b>衡量 ID</b>（<code>G-XXXXXXXXXX</code>），复制它。</li>
+    <li>填进 <code>site.config.json</code> 的 <code>ga4.measurementId</code>。</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h2>④ GTM（加分项）</h2>
+  <ol>
+    <li>打开 <a href="https://tagmanager.google.com/">tagmanager.google.com</a> →「创建账号」。</li>
+    <li>容器名 <code>MenuSifu</code>，目标平台选 <b>网页</b>（Web）。</li>
+    <li>创建后顶部会出现容器 ID <code>GTM-XXXXXX</code>，复制填进 <code>gtm.containerId</code>。</li>
+    <li><b>在 GTM 里挂上 GA4</b>（这样 GA4 由 GTM 统一加载）：<br>
+      左侧「代码」→「新建」→ 代码配置选 <b>Google Analytics：GA4 配置</b> → 衡量 ID 填刚才的 <code>G-XXXX</code> → 触发条件选 <b>All Pages</b> → 保存 → 右上角「<b>提交/发布</b>」。</li>
+  </ol>
+  <div class="ok"><b>为什么不在页面里直接写 gtag？</b>配置里 <code>ga4.viaGtm = true</code> 时，脚本<b>不会</b>往页面插独立的 GA4 代码，GA4 完全由 GTM 容器加载 —— 这是业界标准做法，避免 page_view 被重复统计。若你想直连，把 <code>viaGtm</code> 改成 <code>false</code> 重新运行脚本即可。</div>
+</div>
+
+<div class="card">
+  <h2>⑤ 应用配置并部署</h2>
+  <p>三个 ID 都填好后，在项目目录执行：</p>
+  <pre>python apply-analytics.py
+
+git add .
+git commit -m "feat: add GSC verification, GA4 and GTM"
+git push</pre>
+  <p>Cloudflare 会自动部署。部署完成后校验线上是否生效：</p>
+  <pre>python apply-analytics.py --check</pre>
+  <p>全部显示 <code>PASS</code> 就说明代码已正确上线。</p>
+</div>
+
+<div class="card">
+  <h2>⑥ 最后确认三处都亮绿灯</h2>
+  <ul>
+    <li><b>GSC</b>：显示「已验证所有权」；站点地图状态「成功」。</li>
+    <li><b>GA4</b>：左侧「报告 → 实时」，用自己的手机/浏览器打开网站，实时用户数应变为 1。</li>
+    <li><b>GTM</b>：右上角「预览」→ 输入 <code>https://sifumenu.huoban.men</code> → 显示「已连接」即容器生效。</li>
+  </ul>
+  <div class="warn">若 GA4 实时无数据：确认 GTM 容器已「提交/发布」（不只是保存），且 GA4 配置代码的衡量 ID 没填错。</div>
+</div>
+
+<footer>本指南与 apply-analytics.py 配套使用 ｜ 生成于 2026-10-15</footer>
+</div>
+</body>
+</html>

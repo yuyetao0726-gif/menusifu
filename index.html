@@ -77,31 +77,16 @@
       "acceptsReservations": true
     }
     </script>
-
-    <!-- ============ Google Search Console 验证（上线后把 content 换成 GSC 提供的验证码） ============ -->
-    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE">
-
-    <!-- ============ 分析工具：GTM + GA4（占位符，上线前替换为真实 ID） ============ -->
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Analytics 4（若已在 GTM 内配置 GA4，请删除本段以免重复统计） -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
+    <!-- BEGIN:ANALYTICS -->
+    <!-- Google Analytics 4 (standalone) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9B6R00LQ9"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G9B6R00LQ9');</script>
     <link rel="preconnect" href="https://www.googletagmanager.com">
+    <!-- END:ANALYTICS -->
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div class="head-top">
+            <div class="head-top">
         <img class="logo" src="./images/11.png" alt="MenuSifu">
         <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false"
             aria-controls="nav-menu">☰</button>

@@ -1,0 +1,17 @@
+{
+  "siteUrl": "https://sifumenu.huoban.men",
+  "_备注_GSC": "verificationMethod 可选: meta(HTML标签) | htmlfile(上传html文件) | dns(Cloudflare加TXT记录,推荐)",
+  "gsc": {
+    "verificationCode": "",
+    "verificationMethod": "meta"
+  },
+  "_备注_GTM": "容器ID形如 GTM-ABC1234",
+  "gtm": {
+    "containerId": ""
+  },
+  "_备注_GA4": "衡量ID形如 G-ABCDEF123; viaGtm=true 表示 GA4 在 GTM 容器内配置(推荐), 不在页面里重复埋 gtag",
+  "ga4": {
+    "measurementId": "G-G9B6R00LQ9",
+    "viaGtm": false
+  }
+}
